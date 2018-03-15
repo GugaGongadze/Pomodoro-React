@@ -14,6 +14,7 @@ class App extends Component {
 			display: ''
 		};
 
+		let countdown;
 		this.handleSecondsData = this.handleSecondsData.bind(this);
 	}
 
@@ -26,19 +27,18 @@ class App extends Component {
 	}
 
 	timer(seconds) {
-		let countdown;
-		clearInterval(countdown);
+		clearInterval(this.countdown);
 
 		const now = Date.now();
 		const then = now + seconds * 1000;
 
 		this.displayTimeLeft(seconds);
 
-		countdown = setInterval(() => {
+		this.countdown = setInterval(() => {
 			const secondsLeft = Math.round((then - Date.now()) / 1000);
 
 			if (secondsLeft < 0) {
-				clearInterval(countdown);
+				clearInterval(this.countdown);
 				return;
 			}
 			this.displayTimeLeft(secondsLeft);
