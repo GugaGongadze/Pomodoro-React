@@ -60,7 +60,7 @@ class App extends Component {
 	render() {
 		return (
 			<div className="timer">
-				<div className="timer__contols">
+				<div className="timer__controls">
 					<Button
 						handleButtonClick={this.handleSecondsData}
 						time={20}
@@ -91,6 +91,7 @@ class App extends Component {
 					>
 						Lunch Break
 					</Button>
+
 					<InputTimer handleSubmit={this.handleSecondsData} />
 				</div>
 				<Clock display={this.state.display} />

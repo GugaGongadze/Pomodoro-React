@@ -10,3 +10,14 @@
 	font-size: 4rem;
 	color: white;
 }
+
+form {
+	flex: 1;
+	display: flex;
+}
+
+input {
+	flex: 1;
+	border: 0;
+	padding: 2rem;
+}

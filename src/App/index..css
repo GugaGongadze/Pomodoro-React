@@ -13,20 +13,5 @@
 }
 
 .timer__controls {
-	display: flex !important;
-}
-
-.timer__controls > * {
-	flex: 1;
-}
-
-.timer__controls form {
-	flex: 1;
 	display: flex;
-}
-
-.timer__controls input {
-	flex: 1;
-	border: 0;
-	padding: 2rem;
 }
