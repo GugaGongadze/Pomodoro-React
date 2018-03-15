@@ -14,10 +14,10 @@ class App extends Component {
 			display: ''
 		};
 
-		this.handleButtonClick = this.handleButtonClick.bind(this);
+		this.handleSecondsData = this.handleSecondsData.bind(this);
 	}
 
-	handleButtonClick(data) {
+	handleSecondsData(data) {
 		this.setState({
 			seconds: data
 		});
@@ -26,15 +26,15 @@ class App extends Component {
 	}
 
 	timer(seconds) {
+		let countdown;
 		clearInterval(countdown);
 
 		const now = Date.now();
 		const then = now + seconds * 1000;
 
 		this.displayTimeLeft(seconds);
-		// displayEndTime(then);
 
-		let countdown = setInterval(() => {
+		countdown = setInterval(() => {
 			const secondsLeft = Math.round((then - Date.now()) / 1000);
 
 			if (secondsLeft < 0) {
@@ -55,7 +55,6 @@ class App extends Component {
 		this.setState({
 			display: display
 		});
-		console.log(this.state);
 	}
 
 	render() {
@@ -63,16 +62,36 @@ class App extends Component {
 			<div className="timer">
 				<div className="timer__contols">
 					<Button
-						handleButtonClick={this.handleButtonClick}
+						handleButtonClick={this.handleSecondsData}
 						time={20}
 					>
 						20 Secs
 					</Button>
-					<Button time={300}>Work 5</Button>
-					<Button time={900}>Quick 15</Button>
-					<Button time={1200}>Snack 20</Button>
-					<Button time={3600}>Lunch Break</Button>
-					<InputTimer />
+					<Button
+						handleButtonClick={this.handleSecondsData}
+						time={300}
+					>
+						Work 5
+					</Button>
+					<Button
+						handleButtonClick={this.handleSecondsData}
+						time={900}
+					>
+						Quick 15
+					</Button>
+					<Button
+						handleButtonClick={this.handleSecondsData}
+						time={1200}
+					>
+						Snack 20
+					</Button>
+					<Button
+						handleButtonClick={this.handleSecondsData}
+						time={3600}
+					>
+						Lunch Break
+					</Button>
+					<InputTimer handleSubmit={this.handleSecondsData} />
 				</div>
 				<Clock display={this.state.display} />
 			</div>
