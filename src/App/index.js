@@ -3,6 +3,7 @@ import './index..css';
 
 import Button from '../Button';
 import InputTimer from '../InputTimer';
+import Clock from '../Clock';
 
 class App extends Component {
 	constructor(props) {
@@ -21,10 +22,7 @@ class App extends Component {
 					<Button time={3600}>Lunch Break</Button>
 					<InputTimer />
 				</div>
-				<div className="display">
-					<h1 className="display__time-left" />
-					<p className="display__end-time" />
-				</div>
+				<Clock />
 			</div>
 		);
 	}
